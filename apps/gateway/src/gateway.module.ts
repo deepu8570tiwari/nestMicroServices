@@ -13,7 +13,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           options:{
             urls:[process.env.RABBITMQ_URL ?? 'amqp://catalog:catalog123@127.0.0.1:5672'],
             queue: process.env.CATALOG_QUEUE ?? 'catalog_queue',
-            queueOptions:{durable:false}
+            queueOptions:{durable:true}
           }
         },
         {
@@ -22,7 +22,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           options:{
             urls:[process.env.RABBITMQ_URL ?? 'amqp://catalog:catalog123@127.0.0.1:5672'],
             queue: process.env.MEDIA_QUEUE ?? 'media_queue',
-            queueOptions:{durable:false}
+            queueOptions:{durable:true}
           }
         },
         {
@@ -31,7 +31,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           options:{
             urls:[process.env.RABBITMQ_URL ?? 'amqp://catalog:catalog123@127.0.0.1:5672'],
             queue: process.env.SEARCH_QUEUE ?? 'search_queue',
-            queueOptions:{durable:false}
+            queueOptions:{durable:true}
           }
         }
       ]
