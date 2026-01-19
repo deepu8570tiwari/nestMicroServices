@@ -6,7 +6,7 @@ import { MessagePattern } from '@nestjs/microservices';
 export class MediaController {
   constructor(private readonly mediaService: MediaService) {}
 
-  @MessagePattern('media.ping')
+  @MessagePattern('service.ping')
     ping() {
       return this.mediaService.ping();
     }
